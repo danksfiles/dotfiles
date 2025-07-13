@@ -1,0 +1,23 @@
+ls
+fish
+exit
+clear
+cd
+numpy-config 
+exit
+paru -S starship
+starship
+exit
+nu
+exit
+ls
+clear
+ls
+cd doc
+cd Documents/
+ls
+nvim Untitled.md
+clear
+ccd
+cd
+exit

@@ -1,0 +1,61 @@
+# Minimalist Monochrome Dark Theme (Validated TOML)
+[colors.primary]
+background = "#111111"
+foreground = "#EEEEEE"
+
+[colors.cursor]
+text = "#111111"
+cursor = "#EEEEEE"
+
+[colors.selection]
+text = "#111111"
+background = "#AAAAAA"
+
+[colors.normal]
+black = "#111111"
+red = "#333333"
+green = "#555555"
+yellow = "#777777"
+blue = "#999999"
+magenta = "#BBBBBB"
+cyan = "#DDDDDD"
+white = "#EEEEEE"
+
+[colors.bright]
+black = "#333333"
+red = "#555555"
+green = "#777777"
+yellow = "#999999"
+blue = "#BBBBBB"
+magenta = "#DDDDDD"
+cyan = "#FFFFFF"
+white = "#FFFFFF"
+
+[window]
+opacity = 0.85
+padding = { x = 10, y = 10 }
+decorations = "none"
+
+[font]
+normal = { family = "Fira Code", style = "Regular" }
+size = 12
+
+[scrolling]
+history = 5000
+multiplier = 3
+
+[cursor]
+style = "Block"
+
+
+[keyboard]
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"

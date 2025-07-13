@@ -1,0 +1,316 @@
+# Alacritty Configuration
+# Converted from WezTerm configuration to match functionality and keybinds
+#
+# KEYBOARD SHORTCUTS:
+#
+# | Shortcut           | Action                        |
+# |--------------------|-------------------------------|
+# | ALT+-              | Split pane horizontally       |
+# | ALT+\              | Split pane vertically         |
+# | ALT+X              | Close current pane            |
+# | ALT+Arrow keys     | Navigate between panes        |
+# | ALT+SHIFT+Arrows   | Resize current pane           |
+# | ALT+O              | Toggle window opacity         |
+# | ALT+Enter          | Toggle fullscreen mode        |
+# | ALT+T              | Open new tab                  |
+# | ALT+W              | Close current tab             |
+# | ALT+Tab            | Next tab                      |
+# | ALT+SHIFT+Tab      | Previous tab                  |
+# | ALT+C              | Copy to clipboard             |
+# | ALT+V              | Paste from clipboard          |
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+# Window appearance settings
+opacity = 0.95
+decorations = "buttonless"  # Similar to WezTerm's RESIZE
+startup_mode = "Windowed"
+dynamic_title = true
+dynamic_padding = false
+
+# Window padding (matches WezTerm config)
+[window.padding]
+x = 2
+y = 2
+
+# Window position (optional)
+# [window.position]
+# x = 0
+# y = 0
+
+# Font configuration (matching WezTerm)
+[font]
+size = 9.0
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold Italic"
+
+# Font features (disable ligatures like WezTerm config)
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+# Cursor configuration (matching WezTerm's BlinkingBlock)
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+blink_timeout = 5
+unfocused_hollow = true
+thickness = 0.15
+
+# Mouse settings
+[mouse]
+hide_when_typing = false
+
+# Selection settings
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = false
+
+# Scrolling
+[scrolling]
+history = 10000
+multiplier = 3
+
+# Bell (disable it)
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+color = "#ffffff"
+command = "None"
+
+# Colors (matching WezTerm's dark purple and neon green theme)
+[colors]
+# Default colors
+[colors.primary]
+background = "#1a0033"  # Dark purple background
+foreground = "#00ff00"  # Neon green text
+
+# Cursor colors
+[colors.cursor]
+text = "#1a0033"    # Dark purple text for cursor
+cursor = "#00ff00"  # Neon green cursor
+
+# VI mode cursor
+[colors.vi_mode_cursor]
+text = "#1a0033"
+cursor = "#00ff00"
+
+# Search colors
+[colors.search]
+[colors.search.matches]
+foreground = "#1a0033"
+background = "#00ff00"
+
+[colors.search.focused_match]
+foreground = "#1a0033"
+background = "#66ff66"
+
+# Keyboard regex hints
+[colors.hints]
+[colors.hints.start]
+foreground = "#1a0033"
+background = "#ffff00"
+
+[colors.hints.end]
+foreground = "#1a0033"
+background = "#00ff00"
+
+# Selection colors
+[colors.selection]
+text = "#1a0033"      # Dark purple selected text
+background = "#00ff00" # Neon green selection background
+
+# Line indicator (used in Vim mode)
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+# Footer bar
+[colors.footer_bar]
+foreground = "#1a0033"
+background = "#00ff00"
+
+# Normal colors (matching WezTerm's ansi colors)
+[colors.normal]
+black   = "#000000"  # Black
+red     = "#ff0066"  # Red (pinkish)
+green   = "#00ff00"  # Green (neon green)
+yellow  = "#ffff00"  # Yellow
+blue    = "#3300ff"  # Blue (purplish-blue)
+magenta = "#cc00ff"  # Magenta (bright purple)
+cyan    = "#00ffff"  # Cyan
+white   = "#d0d0d0"  # White
+
+# Bright colors (matching WezTerm's brights colors)
+[colors.bright]
+black   = "#808080"  # Bright black (gray)
+red     = "#ff3399"  # Bright red (brighter pink)
+green   = "#66ff66"  # Bright green (lighter neon green)
+yellow  = "#ffff66"  # Bright yellow
+blue    = "#6633ff"  # Bright blue (brighter purplish-blue)
+magenta = "#dd66ff"  # Bright magenta (lighter purple)
+cyan    = "#66ffff"  # Bright cyan
+white   = "#ffffff"  # Bright white
+
+# Dim colors (optional, for completeness)
+[colors.dim]
+black   = "#000000"
+red     = "#cc0055"
+green   = "#00cc00"
+yellow  = "#cccc00"
+blue    = "#2200cc"
+magenta = "#aa00cc"
+cyan    = "#00cccc"
+white   = "#aaaaaa"
+
+# Key bindings (matching WezTerm functionality)
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Alt"
+action = "CreateNewWindow"  # Note: Alacritty doesn't support pane splitting natively
+
+[[keyboard.bindings]]
+key = "Backslash"
+mods = "Alt"
+action = "CreateNewWindow"  # Note: Alacritty doesn't support pane splitting natively
+
+# Close current window (closest to closing pane)
+[[keyboard.bindings]]
+key = "X"
+mods = "Alt"
+action = "Quit"
+
+# Navigation between windows (Alacritty limitation - no pane navigation)
+# These will be handled by your window manager or terminal multiplexer
+
+# Copy/Paste
+[[keyboard.bindings]]
+key = "C"
+mods = "Alt"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Alt"
+action = "Paste"
+
+# Toggle fullscreen
+[[keyboard.bindings]]
+key = "Return"
+mods = "Alt"
+action = "ToggleFullscreen"
+
+# New window (similar to new tab)
+[[keyboard.bindings]]
+key = "T"
+mods = "Alt"
+action = "CreateNewWindow"
+
+# Clear screen
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+action = "ClearLogNotice"
+
+# Search
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+# Vi mode toggle
+[[keyboard.bindings]]
+key = "Space"
+mods = "Shift|Control"
+action = "ToggleViMode"
+
+# Vi mode navigation
+[[keyboard.bindings]]
+key = "Escape"
+mode = "Vi"
+action = "ClearSelection"
+
+# Scrolling
+[[keyboard.bindings]]
+key = "K"
+mods = "Control|Shift"
+action = "ScrollLineUp"
+
+[[keyboard.bindings]]
+key = "J"
+mods = "Control|Shift"
+action = "ScrollLineDown"
+
+[[keyboard.bindings]]
+key = "U"
+mods = "Control|Shift"
+action = "ScrollHalfPageUp"
+
+[[keyboard.bindings]]
+key = "D"
+mods = "Control|Shift"
+action = "ScrollHalfPageDown"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Control|Shift"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Control|Shift"
+action = "ScrollToBottom"
+
+# Font size adjustment
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+# Window management
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "CreateNewWindow"
+
+# Debug
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "Warn"
+print_events = false
